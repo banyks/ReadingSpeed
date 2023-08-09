@@ -15,6 +15,7 @@
 
 //general variables
 std::ifstream file;
+std::ofstream newFile;
 std::vector<std::string> sentesces;
 std::vector<float> allSentenceslength, allSentencesTime;
 float averageSentenceslength, averageSentencesTime;
@@ -82,6 +83,11 @@ void timeGuess() {
 	//prints the estimated time needed to read
 	estimatedTime = sentenceLength / lettersTime;
 	std::cout << "estimated time: " << estimatedTime << "\ntime needed: " << neededTime.count();
+
+	newFile << "Estimated time: " << estimatedTime << "\nReal time: " << neededTime.count() 
+		<< "\nSentence: " << randomSentence << "\n------------------------------------------------\n";
+
+	newFile.close();
 	std::cout << "\n";
 	std::cout << "\npress any key to close the program";
 
@@ -112,9 +118,10 @@ float lettersPerTime() {
 int main() {
 	//open the file
 	file.open("Sentences.txt"); 
+	newFile.open("Results.txt", std::ios::app);
 	
 	//runs only if the file is open
-	if (file.is_open()) {
+	if (file.is_open() || newFile.is_open()) {
 		std::string line;
 		startInstructions();
 
