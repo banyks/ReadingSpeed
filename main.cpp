@@ -26,7 +26,7 @@ int sentencesNum = 5 - 1; //without -1 it would be ex:6 instead of 5
 void startInstructions() {
 	std::cout << "Wellcome!\n";
 	std::cout << "In this program we will see how long it takes you, to read simple sentences.\n";
-	std::cout << "when your finished reading the given sentence, press any key to see the result.\n";
+	std::cout << "when you've read the given sentence, press any key to see the result.\n";
 	std::cout << "after 5 sentences, we will see if the program knows how long it takes you to read a sentence.\n";
 	std::cout << "please enter the accuracy you need (5-10 recomended, higher = more sentences): ";
 	std::cout << "press any key when your ready to start:\n"; _getch();
