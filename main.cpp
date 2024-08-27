@@ -125,7 +125,7 @@ int main() {
 		std::string line;
 		startInstructions();
 
-		//reads the lines, copyes them and closes the file
+		//reads the lines, copies them and closes the file
 		while(getline(file, line))
 		{
 			sentesces.push_back(line);
